@@ -24,7 +24,7 @@
 <h4 class="flow-text">
   <%= @drama.title %>
 </h4>
-    <div class="chip light-green accent-3 z-depth-1">
+    <!-- <div class="chip light-green accent-3 z-depth-1">
                   <%= @drama.last_ep.split('Episode')[-1].strip %>
               <i class="material-icons">theaters</i>
               </div>
@@ -46,7 +46,7 @@
 
 <p class="flow-text">
   <%= @drama.description %>
-</p>
+</p> -->
 <div class="card-action">
         <a href=<%= @drama.url %> >Watch now</a>
         <%= link_to 'Update', edit_drama_path(@drama) %>
