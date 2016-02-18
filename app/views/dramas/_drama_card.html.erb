@@ -5,7 +5,26 @@
               ">
             
             <div class="card-content">
-            
+            <p class="card-title"><%= link_to drama.title, drama %></p>
+              <div class="chip light-green accent-3 z-depth-1">
+                  <%= drama.last_ep.split('Episode')[-1].strip %>
+              <i class="material-icons">theaters</i>
+              </div>
+            <% if drama.subbed? %>
+              <div class="chip light-green accent-3 z-depth-1">
+                  Subbed!
+              <i class="material-icons">done</i>
+              </div>
+              <% else %>
+              <div class="chip red darken-1 z-depth-1">
+                  Raw..
+              <i class="material-icons">error_outline</i>
+              </div>
+            <% end %>
+            <br>
+            <br>
+              <p class="flow-text"><%= truncate(drama.description, length: 150, separator: ' ') %><p>
+            </div>
             <div class="card-action index">
               <a href=<%= drama.url %> >Watch now</a>
               <%= link_to 'Update', edit_drama_path(drama) %>
