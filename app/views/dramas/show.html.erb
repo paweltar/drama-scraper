@@ -16,6 +16,10 @@
         -webkit-filter: blur(2px);
     }
 </style>
+<% if notice.present? %>
+<p id="notice" class="chip animated rubberBand"><%= notice %><i class="material-icons">close</i></p>
+<% end %>
+
 <div class="card show animated fadeIn">
 <h4 class="flow-text">
   <%= @drama.title %>

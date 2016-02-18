@@ -25,7 +25,7 @@
             <br>
               <p class="flow-text"><%= truncate(drama.description, length: 150, separator: ' ') %><p>
             </div>
-            <div class="card-action">
+            <div class="card-action index">
               <a href=<%= drama.url %> >Watch now</a>
               <%= link_to 'Update', edit_drama_path(drama) %>
               <%= link_to 'Show More', drama %>
