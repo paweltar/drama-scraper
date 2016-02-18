@@ -24,29 +24,7 @@
 <h4 class="flow-text">
   <%= @drama.title %>
 </h4>
-    <!-- <div class="chip light-green accent-3 z-depth-1">
-                  <%= @drama.last_ep.split('Episode')[-1].strip %>
-              <i class="material-icons">theaters</i>
-              </div>
-            <% if @drama.subbed? %>
-              <div class="chip light-green accent-3 z-depth-1">
-                  Subbed!
-              <i class="material-icons">done</i>
-              </div>
-              <% else %>
-              <div class="chip red darken-1 z-depth-1">
-                  Raw..
-              <i class="material-icons">error_outline</i>
-              </div>
-            <% end %>
-            <br>
-<p>
-  Last episode was broadcast <strong><%= @drama.broadcasted_at.stamp("Sunday, May 1, 2000") %></strong>, so it was <strong><%= time_ago_in_words @drama.broadcasted_at %></strong> ago. 
-</p>
-
-<p class="flow-text">
-  <%= @drama.description %>
-</p> -->
+    
 <div class="card-action">
         <a href=<%= @drama.url %> >Watch now</a>
         <%= link_to 'Update', edit_drama_path(@drama) %>
