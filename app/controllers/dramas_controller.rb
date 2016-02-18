@@ -9,7 +9,7 @@ class DramasController < ApplicationController
   def index
     @dramas = Drama.all
     @titles = Drama.titles
-    @last_update = Drama.order(:created_at).last.created_at
+    @last_update = Drama.order(:created_at).last.created_at if @dramas.any? 
   end
 
   # GET /dramas/1

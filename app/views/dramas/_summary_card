@@ -1,7 +1,0 @@
-<div class="card-panel teal">
-          <span class="white-text">
-          <p>Hi!</p>
-          Currently you are watching <%= @titles.to_sentence %>. 
-          Last update was <%= time_ago_in_words @dramas.last.created_at %> ago.
-          </span>
- </div>
