@@ -14,10 +14,10 @@ class Drama < ActiveRecord::Base
 		doc = Nokogiri::HTML(open(url))
 
 		title = doc.at_css('h1').text
-		last_ep_title = doc.css('h2 a').first.text
+		last_ep_title = doc.css('#content-left li:nth-child(1) a').text
 		subbed_img_url = doc.css('li:nth-child(1) .raw').attr('src').to_s
 		subbed = subbed_img_url.include? "sub"
-		broadcast_date = doc.css('.list-episode span').first.text
+		broadcast_date = doc.css('li:nth-child(1) span').text
 		poster = doc.css('.poster').attr('src').to_s
 		drama_description = doc.css('.info p').text
 
