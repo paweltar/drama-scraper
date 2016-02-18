@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'nokogiri'
+gem 'font-awesome-rails'
 gem 'materialize-sass'
 gem "animate-rails"
 gem "stamp"

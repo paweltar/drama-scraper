@@ -1,22 +1,22 @@
 <%= form_for(@drama) do |f| %>
   <% if @drama.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@drama.errors.count, "error") %> prohibited this drama from being saved:</h2>
-
-      <ul>
+      <p>
       <% @drama.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <span class="chip red darken-1 error_chip z-depth-2 animated flipInX"><%= message %></span>
       <% end %>
-      </ul>
+      </p>
+      <br>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
+    <%= f.label :url %>
+    <%= f.text_field :url, placeholder: "paste url from myasiantv.se" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= link_to 'Cancel', dramas_path, class: 'waves-effect waves-light btn' %>
+    <%= f.submit 'Submit', class: 'waves-effect waves-light btn' %>
   </div>
 <% end %>
