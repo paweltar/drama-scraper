@@ -1,5 +1,5 @@
 require 'nokogiri'
-require 'httparty'
+require 'open-uri'
 
 class Drama < ActiveRecord::Base
 	validates :url, presence: :true, uniqueness: :true
@@ -11,8 +11,7 @@ class Drama < ActiveRecord::Base
 	}
 
 	def fetch_drama_info
-		html_string = HTTParty.get(url)
-		doc = Nokogiri::HTML(html_string)
+		doc = Nokogiri::HTML(open(url))
 
 		title = doc.at_css('h1').text
 		last_ep_title = doc.css('#content-left li:nth-child(1) a').text
