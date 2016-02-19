@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
-  resources :dramas
+  devise_for :users, :path => 'accounts'
+  
+  resources :users do
+    resources :dramas
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'dramas#index'
+  get "dramas/update_all" => "dramas#update_all"
 
+  devise_scope :user do
+    get '/accounts/sign_out' => 'devise/sessions#destroy'
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

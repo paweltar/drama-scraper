@@ -1,12 +1,12 @@
 <div class="card-panel blue darken-2 animated bounceInRight">
           <span class="white-text">
-          <h3>Hi!</h3>
+          <h3 class="flow-text">Hi <%= @user.email %>!</h3>
           <% if @dramas.any? %>
-          <p class="flow-text">Currently you are watching <%= @titles.to_sentence %>. 
-          Last update was <%= time_ago_in_words @last_update %> ago.</p>
+          <p class="flow-text">Currently you are watching <%= @titles.to_sentence %></p>
           <% else %>
-          <p>You can start by pasting some URL.</p>
+          <p class="flow-text">You can start by pasting some URL.</p>
           <% end %>
           </span>
-           <%= link_to "Add new", new_drama_path, class: "waves-effect waves-light btn-large  blue lighten-3 text-darken-2 add_new_btn" %>
+           <%= link_to "Add New", new_user_drama_path(@user), class: "waves-effect waves-light btn-large  blue lighten-3 text-darken-2 add_new_btn" %>
+           <%= link_to "Update All", '#', class: "waves-effect waves-light btn-large  blue lighten-3 text-darken-2 update_all_btn", id: "up_all_btn" %>
  </div>

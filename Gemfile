@@ -29,6 +29,7 @@ gem 'materialize-sass'
 gem "animate-rails"
 gem "stamp"
 gem 'httparty', '~> 0.13.7'
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -49,7 +49,7 @@
 </p>
 <div class="card-action">
         <a href=<%= @drama.url %> >Watch now</a>
-        <%= link_to 'Update', edit_drama_path(@drama) %>
-        <%= link_to 'Back', dramas_path %>
+        <%= link_to 'Update', edit_user_drama_path(user_id: current_user.id, id: @drama.id) %>
+        <%= link_to 'Back', user_dramas_path(current_user) %>
 </div> 
 </div>

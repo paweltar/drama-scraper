@@ -3,43 +3,50 @@ require 'open-uri'
 
 class DramasController < ApplicationController
   before_action :set_drama, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /dramas
   # GET /dramas.json
   def index
-    @dramas = Drama.all
-    @titles = Drama.titles
-    @last_update = Drama.order(:created_at).last.created_at if @dramas.any? 
+    if user_signed_in?
+      @user = current_user
+      @dramas = current_user.dramas.all
+      @titles = current_user.dramas.titles  
+    end    
   end
 
   # GET /dramas/1
   # GET /dramas/1.json
   def show
-    
+    @user = current_user
   end
 
   # GET /dramas/new
   def new
-    @drama = Drama.new
+    @user = current_user
+    @drama = @user.dramas.new
   end
 
   # GET /dramas/1/edit
   def edit
+    @user = current_user
   end
 
   # POST /dramas
   # POST /dramas.json
   def create
-    @drama = Drama.new(drama_params)
+    @user = current_user
+    @drama = current_user.dramas.new(drama_params)
 
     respond_to do |format|
       if @drama.save
-        format.html { redirect_to @drama, notice: 'Drama was successfully created.' }
+        format.html { redirect_to user_drama_path(user_id: current_user.id, id: @drama.id), notice: 'Drama was successfully created.' }
         format.json { render :show, status: :created, location: @drama }
       else
         format.html { render :new }
         format.json { render json: @drama.errors, status: :unprocessable_entity }
       end
+      format.js
     end
   end
 
@@ -48,7 +55,7 @@ class DramasController < ApplicationController
   def update
     respond_to do |format|
       if @drama.update(drama_params)
-        format.html { redirect_to @drama, notice: 'Drama was successfully updated.' }
+        format.html { redirect_to user_drama_path(user_id: current_user.id, id: @drama.id), notice: 'Drama was successfully updated.' }
         format.json { render :show, status: :ok, location: @drama }
       else
         format.html { render :edit }
@@ -57,20 +64,31 @@ class DramasController < ApplicationController
     end
   end
 
+  def update_all
+    Drama.all.each do |drama|
+      drama.fetch_drama_info
+      drama.save
+    end
+    respond_to do |format|
+      format.js
+    end
+  end
+
   # DELETE /dramas/1
   # DELETE /dramas/1.json
   def destroy
     @drama.destroy
     respond_to do |format|
-      format.html { redirect_to dramas_url, notice: 'Drama was successfully destroyed.' }
+      format.html { redirect_to user_dramas_url(current_user), notice: 'Drama was successfully deleted.' }
       format.json { head :no_content }
+      format.js
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_drama
-      @drama = Drama.find(params[:id])
+      @drama = current_user.dramas.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
