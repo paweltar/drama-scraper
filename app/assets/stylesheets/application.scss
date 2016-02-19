@@ -10,7 +10,7 @@ $primary-color: color("blue", "lighten-2") !default;
 
 @font-face {
   font-family: "Manga Style";
-  src: font-url('MangaStyle.ttf') format("truetype");
+  src: font-path('MangaStyle.ttf') format("truetype");
 }
 html {
 	background-color: #f5f5f5;
