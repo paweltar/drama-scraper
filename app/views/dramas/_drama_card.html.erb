@@ -1,7 +1,7 @@
 <% @dramas.each do |drama| %>
-          <div class="card drama" id="<%= drama.id %>" style="
+          <div class="card drama z-depth-3 animated fadeIn" id="<%= drama.id %>" style="
               background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= drama.img %>) no-repeat;
-              background-size: 100% auto;
+              background-size: cover;
               ">
             
             <div class="card-content">
@@ -31,7 +31,6 @@
             </div>
             <div class="card-action index">
               <a href=<%= drama.url %> >Watch now</a>
-              <%= link_to 'Show More', user_drama_path(user_id: current_user.id, id: drama.id) %>
               <%= link_to 'Delete', user_drama_path(user_id: current_user.id, id: drama.id), method: :delete, remote: true %>
             </div>
             
