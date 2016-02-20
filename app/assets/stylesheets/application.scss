@@ -7,6 +7,13 @@ $primary-color: color("blue", "lighten-2") !default;
 @import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
 @import "animate";
 @import "font-awesome";
+@import 'masonry/basic';
+@import 'masonry/centered';
+@import 'masonry/fluid';
+@import 'masonry/gutters';
+@import 'masonry/infinitescroll';
+@import 'masonry/right-to-left';
+@import 'masonry/transitions';
 
 @font-face {
   font-family: "Manga Style";
@@ -20,8 +27,21 @@ a {
 	color: #F5F5F5;
 }
 
+.navbar-fixed{
+	margin-bottom: 10px;
+}
+
 .error_chip {
 	color: whitesmoke;
+}
+
+#dramas {
+	margin: 0 auto;
+}
+
+.drama {
+	width: 400px;
+	margin: 5px;
 }
 
 .last_up_chip {
@@ -44,24 +64,19 @@ a {
 	}
 }
 
-.card-panel {
-	position: relative;
+.card-panel.drama{
 	border-radius: 5px;
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    image-url('wave-cropped.jpg');
+  	span {
+  		text-shadow: 0px 0px 5px rgba(4, 4, 4, 0.67);
+  	}
 }
 
-.add_new_btn {
-	position: absolute;
-	top: 0px;
-	right: -135px;
-	border-radius: 50px;
-}
-
-.update_all_btn {
-	position: absolute;
-	top: 70px;
-	right: -153px;
-	border-radius: 50px;
-}
 
 nav {
 	background-color: transparent;
@@ -87,21 +102,12 @@ div.nav-wrapper {
     backdrop-filter: blur(5px);
     color: black;
 }
-// .add_new_btn {
-// 	position: fixed;
-// 	right: 50px;
-// 	bottom: 50px;
-// }
 
 .delete_btn {
 	position: absolute;
 	top: 0px;
 	right: -120px;
     border-radius: 50px;
-}
-
-img {
-	
 }
 
 .title h1 {
@@ -117,10 +123,6 @@ img {
 
 .material-placeholder {
 	margin-left: 90px;
-}
-
-#notice {
-
 }
 
 .index.card-action a, .card-title a {

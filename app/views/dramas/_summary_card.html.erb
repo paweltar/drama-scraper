@@ -1,4 +1,4 @@
-<div class="card-panel blue darken-2 animated bounceInRight">
+<div class="card-panel blue darken-2 drama">
           <span class="white-text">
           <h3 class="flow-text">Hi <%= @user.email %>!</h3>
           <% if @dramas.any? %>
@@ -7,6 +7,5 @@
           <p class="flow-text">You can start by pasting some URL.</p>
           <% end %>
           </span>
-           <%= link_to "Add New", new_user_drama_path(@user), class: "waves-effect waves-light btn-large  blue lighten-3 text-darken-2 add_new_btn" %>
-           <%= link_to "Update All", '#', class: "waves-effect waves-light btn-large  blue lighten-3 text-darken-2 update_all_btn", id: "up_all_btn" %>
  </div>
+ 

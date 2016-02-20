@@ -1,5 +1,5 @@
 <% @dramas.each do |drama| %>
-          <div class="card animated bounceInRight" id="<%= drama.id %>" style="
+          <div class="card drama" id="<%= drama.id %>" style="
               background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= drama.img %>) no-repeat;
               background-size: 100% auto;
               ">
@@ -32,7 +32,8 @@
             <div class="card-action index">
               <a href=<%= drama.url %> >Watch now</a>
               <%= link_to 'Show More', user_drama_path(user_id: current_user.id, id: drama.id) %>
+              <%= link_to 'Delete', user_drama_path(user_id: current_user.id, id: drama.id), method: :delete, remote: true %>
             </div>
-            <%= link_to 'Delete', user_drama_path(user_id: current_user.id, id: drama.id), method: :delete, remote: true, class: "waves-effect waves-light btn-large delete_btn red darken-1" %>
+            
           </div>
 <% end %>

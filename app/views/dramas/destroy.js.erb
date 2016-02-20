@@ -1,1 +1,5 @@
 $('#<%= @drama.id %>').fadeOut();
+$('#<%= @drama.id %>').remove();
+
+var $grid = $('#dramas').masonry();
+$grid.masonry('layout');

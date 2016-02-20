@@ -11,10 +11,20 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require materialize-sprockets
 //= require materialize/extras/nouislider
 //= require turbolinks
+//= require masonry/jquery.masonry
 //= require_tree .
+
+ $(function(){
+  $('#dramas').masonry({
+    itemSelector: '.drama',
+    isFitWidth: true
+  });
+  
+});
 
  
