@@ -1,11 +1,10 @@
-<div class="card-panel z-depth-3 blue darken-2 drama">
+<div class="card-panel z-depth-3 blue darken-2 drama" id="summary-card">
           <span class="white-text">
           <h3 class="flow-text">Hi <%= @user.email %>!</h3>
           <% if @dramas.any? %>
-          <p class="flow-text">Currently you are watching <%= @titles.to_sentence %></p>
+            <p class="flow-text">Currently you are watching <%= @titles.to_sentence %></p>
           <% else %>
-          <p class="flow-text">You can start by pasting some URL.</p>
+            <p class="flow-text">You can start by pasting some URL.</p>
           <% end %>
           </span>
  </div>
- 

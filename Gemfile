@@ -32,6 +32,7 @@ gem "stamp"
 gem 'httparty', '~> 0.13.7'
 gem 'devise'
 gem 'masonry-rails'
+gem 'valid_url'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -60,4 +61,3 @@ group :production do
   gem 'pg',             '0.17.1'
   gem 'rails_12factor', '0.0.2'
 end
-

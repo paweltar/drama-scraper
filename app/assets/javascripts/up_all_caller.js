@@ -3,7 +3,7 @@ var updateAll=function(){
     type:'GET',
     url:'/dramas/update_all',
     success:function(){
-      $( "html").fadeOut( "slow" );
+      $( "html").fadeOut( "fast" );
         location.reload(true)
       $( "html").fadeIn( "slow" );
     }

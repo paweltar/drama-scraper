@@ -28,6 +28,15 @@ a {
 	color: #F5F5F5;
 }
 
+.side-nav {
+  background-image: image-url('bg_textur.png');
+  color: white;
+}
+
+#mobile-demo > li:nth-child(1) > div {
+  margin-left: 30px;
+}
+
 .navbar-fixed{
 	margin-bottom: 10px;
 }
@@ -41,7 +50,7 @@ a {
 }
 
 .drama {
-	width: 400px;
+	width: 350px;
 	margin: 5px;
 }
 
@@ -71,7 +80,7 @@ a {
 
 .card-panel.drama{
 	border-radius: 5px;
-	background-image: 
+	background-image:
     linear-gradient(
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
