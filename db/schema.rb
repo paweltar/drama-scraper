@@ -14,17 +14,17 @@
 ActiveRecord::Schema.define(version: 20160219155831) do
 
   create_table "dramas", force: :cascade do |t|
-    t.string   "url",                   default: '#'
-    t.string   "title",                 default: 'unknown'
-    t.boolean  "subbed",                default: false
-    t.datetime "broadcasted_at",        default: Time.now
-    t.text     "description",           default: 'unknown'
-    t.string   "img",                   default: 'unknown'
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-    t.string   "last_ep",               default: 'unknown'
+    t.string   "url"
+    t.string   "title"
+    t.boolean  "subbed"
+    t.datetime "broadcasted_at"
+    t.text     "description"
+    t.string   "img"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "last_ep"
     t.integer  "user_id"
-    t.datetime "last_refresh",          default: Time.now
+    t.datetime "last_refresh"
   end
 
   add_index "dramas", ["user_id"], name: "index_dramas_on_user_id"
