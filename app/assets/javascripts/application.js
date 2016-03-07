@@ -18,23 +18,3 @@
 //= require turbolinks
 //= require masonry/jquery.masonry
 //= require_tree .
-
-//  $(function(){
-//   $('#dramas').masonry({
-//     itemSelector: '.drama',
-//     isFitWidth: true
-//   });
-  
-// });
-
-// var $grid = $('#dramas').masonry({
-//   columnWidth: '.drama',	
-//   itemSelector: '.drama',
-//   transitionDuration: '0.8s'
-// });
-// // layout Masonry after each image loads
-// $grid.imagesLoaded().progress( function() {
-//   $grid.masonry('layout');
-// });
-
- 

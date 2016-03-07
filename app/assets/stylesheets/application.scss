@@ -1,5 +1,4 @@
 @import "materialize/components/color";
-$primary-color: color("blue", "lighten-2") !default;
 @import "materialize/components/variables";
 @import "materialize/components/icons-material-design";
 @import "materialize";
@@ -20,6 +19,7 @@ $primary-color: color("blue", "lighten-2") !default;
   font-family: "Manga Style";
   src: font-path('MangaStyle.ttf') format("truetype");
 }
+
 html {
 	background-image: image-url('bg_textur.png');
   padding-right: 5px;
@@ -76,10 +76,10 @@ a {
 
 #error_explanation {
   h2 {
-    
+
   }
   li {
-  
+
   }
 }
 
@@ -88,8 +88,20 @@ a {
 }
 
 .drama {
-	width: 350px;
+  width: 100%;
+	max-width: 350px;
+  min-width: 200px;
 	margin: 5px;
+}
+
+@media only screen and (min-width : 601px) {
+  .drama {
+    width: 90%; }
+}
+
+@media only screen and (min-width : 993px) {
+  .drama {
+    width: 350px; }
 }
 
 .chip {
@@ -119,6 +131,8 @@ a {
 .card-panel.drama{
 	border-radius: 5px;
 	background-image:
+    -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), image-url('wave-cropped.jpg');
+	background-image:
     linear-gradient(
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
@@ -141,9 +155,9 @@ nav {
 	text-transform: uppercase;
 	letter-spacing: 3px;
 	font-family: 'VT323';
-	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	        transition: all 0.3s;
 	font-size: 1em;
-
 }
 
 .brand-logo:hover {
@@ -167,8 +181,6 @@ div.nav-wrapper {
 	position: fixed;
 	left: 50px;
 	top: -9px;
-
-	writing-mode: vertical-lr;
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	font-family: 'Amatic SC';

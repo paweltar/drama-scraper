@@ -1,20 +1,27 @@
 <style media="screen">
-      body {
-        position: absolute;
-        top: 0; bottom: 0; left: 0; right: 0;
-        height: 100%;
-    }
-    body:before {
-        content: "";
-        position: absolute;
-        height: 20%; width: 20%;
-        background: url(<%= @drama.img %>);
-        background-size: cover;
-        z-index: -1;
-        -webkit-transform: scale(5);
-        -webkit-transform-origin: top left;
-        -webkit-filter: blur(2px);
-    }
+body {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    height: 100%;
+}
+body:before {
+    content: "";
+    position: absolute;
+    height: 20%; width: 20%;
+    background: url(<%= @drama.img %>);
+    background-size: cover;
+    z-index: -1;
+    -webkit-transform: scale(5);
+        -ms-transform: scale(5);
+            transform: scale(5);
+    -webkit-transform-origin: top left;
+        -ms-transform-origin: top left;
+            transform-origin: top left;
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="2" /></filter></svg>#filter');
+    -webkit-filter: blur(2px);
+            filter: blur(2px);
+    filter: progid:DXImageTransform.Microsoft.Blur(pixelradius=2);
+}
 </style>
 <% if notice.present? %>
 <p id="notice" class="chip animated rubberBand"><%= notice %><i class="material-icons">close</i></p>
@@ -41,7 +48,7 @@
             <% end %>
             <br>
 <p>
-  Last episode was broadcast <strong><%= @drama.broadcasted_at.stamp("Sunday, May 1, 2000") %></strong>, so it was <strong><%= time_ago_in_words @drama.broadcasted_at %></strong> ago. 
+  Last episode was broadcast <strong><%= @drama.broadcasted_at.stamp("Sunday, May 1, 2000") %></strong>, so it was <strong><%= time_ago_in_words @drama.broadcasted_at %></strong> ago.
 </p>
 
 <p class="flow-text">
@@ -51,5 +58,5 @@
         <a href=<%= @drama.url %> >Watch now</a>
         <%= link_to 'Update', edit_user_drama_path(user_id: current_user.id, id: @drama.id) %>
         <%= link_to 'Back', user_dramas_path(current_user) %>
-</div> 
+</div>
 </div>
