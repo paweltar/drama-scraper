@@ -3,7 +3,7 @@
               background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= drama.img %>) no-repeat;
               background-size: cover;
               ">
-            
+
             <div class="card-content">
             <p class="card-title"><%= link_to drama.title, user_drama_path(user_id: current_user.id, id: drama.id) %></p>
               <div class="chip light-green accent-3 z-depth-1">
@@ -30,9 +30,9 @@
               <p class="flow-text"><%= truncate(drama.description, length: 150, separator: ' ') %><p>
             </div>
             <div class="card-action index">
-              <a href=<%= drama.url %> >Watch now</a>
+              <a href=<%= drama.url %> target="_blank">Watch now</a>
               <%= link_to 'Delete', user_drama_path(user_id: current_user.id, id: drama.id), method: :delete, remote: true %>
             </div>
-            
+
           </div>
 <% end %>

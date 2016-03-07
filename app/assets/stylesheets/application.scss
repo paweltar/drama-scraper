@@ -3,17 +3,11 @@
 @import "materialize/components/icons-material-design";
 @import "materialize";
 @import "materialize/extras/nouislider";
-@import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
 @import "animate";
 @import "font-awesome";
-@import 'masonry/basic';
-@import 'masonry/centered';
-@import 'masonry/fluid';
-@import 'masonry/gutters';
-@import 'masonry/infinitescroll';
-@import 'masonry/right-to-left';
-@import 'masonry/transitions';
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
 @import url(https://fonts.googleapis.com/css?family=VT323);
+
 
 @font-face {
   font-family: "Manga Style";
@@ -84,14 +78,24 @@ a {
 }
 
 #dramas {
-	margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 
 .drama {
   width: 100%;
 	max-width: 350px;
   min-width: 200px;
-	margin: 5px;
+	margin: 10px;
 }
 
 @media only screen and (min-width : 601px) {

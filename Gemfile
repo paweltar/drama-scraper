@@ -31,7 +31,6 @@ gem "animate-rails"
 gem "stamp"
 gem 'httparty', '~> 0.13.7'
 gem 'devise'
-gem 'masonry-rails'
 gem 'valid_url'
 
 # Use ActiveModel has_secure_password
