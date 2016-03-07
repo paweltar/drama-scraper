@@ -4,7 +4,6 @@ $(document).on('page:fetch', function() {
 });
 
 $(document).on('page:change', function() {
-  $('#dramas').masonry();
   $('.preloader-overlay').hide();
   $('.preloader-wrapper').hide();
 });
