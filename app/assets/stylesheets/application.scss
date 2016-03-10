@@ -8,12 +8,6 @@
 @import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
 @import url(https://fonts.googleapis.com/css?family=VT323);
 
-
-@font-face {
-  font-family: "Manga Style";
-  src: font-path('MangaStyle.ttf') format("truetype");
-}
-
 html {
 	background-image: image-url('bg_textur.png');
   padding-right: 5px;
@@ -31,6 +25,17 @@ main {
 
 a {
 	color: #F5F5F5;
+}
+
+.btn-large {
+  background-color: #396484;
+  &:hover {
+    background-color: #1772B6;
+  }
+}
+
+.container {
+
 }
 
 .preloader-wrapper{
@@ -69,12 +74,20 @@ footer.page-footer {
   background-color: #161616;
 }
 
+.footer-title {
+  text-transform: uppercase;
+	letter-spacing: 3px;
+	font-family: 'VT323';
+}
+
+
+
 .drag-target {
   width: 5px;
 }
 
 .side-nav {
-  background-color: rgba(44, 44, 44, 0.55);
+  background-color: rgb(44, 44, 44);
   color: white;
 }
 
@@ -97,6 +110,14 @@ footer.page-footer {
   li {
 
   }
+}
+
+.welcome-wrapper {
+
+}
+
+.welcome-card {
+
 }
 
 #dramas {

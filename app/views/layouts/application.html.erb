@@ -43,6 +43,9 @@
 
 <main>
   <div class="container">
+    <% if alert %>
+      <p class="alert chip red darken-1 error_chip z-depth-2 animated flipInX"><%= alert %></p>
+    <% end %>
   	<%= yield %>
   </div>
 </main>
@@ -51,8 +54,8 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Drama Scraper</h5>
-          <p class="grey-text text-lighten-4">Get information about all new episodes with one click.</p>
+          <h5 class="white-text footer-title">Drama Scraper</h5>
+          <p class="grey-text text-lighten-4">Get information about all new episodes with just one click.</p>
         </div>
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Paste links from:</h5>
