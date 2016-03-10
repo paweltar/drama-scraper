@@ -1,38 +1,40 @@
-<% @dramas.each do |drama| %>
-          <div class="card drama z-depth-3 animated fadeIn" id="<%= drama.id %>" style="
-              background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= drama.img %>) no-repeat;
-              background-size: cover;
-              ">
+<div id="dramas" class="transitions-enabled">
+  <% @dramas.each do |drama| %>
+            <div class="card drama z-depth-3 animated fadeIn" id="<%= drama.id %>" style="
+                background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= drama.img %>) no-repeat;
+                background-size: cover;
+                ">
 
-            <div class="card-content">
-            <p class="card-title"><%= link_to drama.title, user_drama_path(user_id: current_user.id, id: drama.id) %></p>
-              <div class="chip light-green accent-3 z-depth-1">
-                  <%= drama.last_ep.split('Episode')[-1].strip %>
-              <i class="material-icons">theaters</i>
+              <div class="card-content">
+              <p class="card-title"><%= link_to drama.title, user_drama_path(user_id: current_user.id, id: drama.id) %></p>
+                <div class="chip light-green accent-3 z-depth-1">
+                    <%= drama.last_ep.split('Episode')[-1].strip %>
+                <i class="material-icons">theaters</i>
+                </div>
+                <div class="chip light-green accent-2 z-depth-1 last_up_chip">
+                    <%= time_ago_in_words drama.last_refresh %> ago
+                <i class="material-icons">loop</i>
+                </div>
+              <% if drama.subbed? %>
+                <div class="chip light-green accent-1 z-depth-1">
+                    Subbed!
+                <i class="material-icons">done</i>
+                </div>
+                <% else %>
+                <div class="chip red darken-1 z-depth-1">
+                    Raw..
+                <i class="material-icons">error_outline</i>
+                </div>
+              <% end %>
+              <br>
+              <br>
+                <p class="flow-text"><%= truncate(drama.description, length: 150, separator: ' ') %><p>
               </div>
-              <div class="chip light-green accent-2 z-depth-1 last_up_chip">
-                  <%= time_ago_in_words drama.last_refresh %> ago
-              <i class="material-icons">loop</i>
+              <div class="card-action index">
+                <a href=<%= drama.url %> target="_blank">Watch now</a>
+                <%= link_to 'Delete', user_drama_path(user_id: current_user.id, id: drama.id), method: :delete, remote: true %>
               </div>
-            <% if drama.subbed? %>
-              <div class="chip light-green accent-1 z-depth-1">
-                  Subbed!
-              <i class="material-icons">done</i>
-              </div>
-              <% else %>
-              <div class="chip red darken-1 z-depth-1">
-                  Raw..
-              <i class="material-icons">error_outline</i>
-              </div>
-            <% end %>
-            <br>
-            <br>
-              <p class="flow-text"><%= truncate(drama.description, length: 150, separator: ' ') %><p>
-            </div>
-            <div class="card-action index">
-              <a href=<%= drama.url %> target="_blank">Watch now</a>
-              <%= link_to 'Delete', user_drama_path(user_id: current_user.id, id: drama.id), method: :delete, remote: true %>
-            </div>
 
-          </div>
-<% end %>
+            </div>
+  <% end %>
+</div>

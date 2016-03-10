@@ -32,6 +32,7 @@ gem "stamp"
 gem 'httparty', '~> 0.13.7'
 gem 'devise'
 gem 'valid_url'
+gem 'masonry-rails', '~> 0.2.4'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

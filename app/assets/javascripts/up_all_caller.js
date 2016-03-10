@@ -16,7 +16,6 @@ $(document).ready(function () {
   });
 
   $(document).ajaxStop(function () {
-    location.reload(true)
     $('.drama').fadeIn();
     $('.preloader-overlay').hide();
     $('.preloader-wrapper').hide();

@@ -16,4 +16,5 @@
 //= require materialize-sprockets
 //= require materialize/extras/nouislider
 //= require turbolinks
+//= require masonry/jquery.masonry
 //= require_tree .

@@ -7,6 +7,8 @@
 @import "font-awesome";
 @import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
 @import url(https://fonts.googleapis.com/css?family=VT323);
+@import url(https://fonts.googleapis.com/css?family=Caveat:700&subset=latin,latin-ext);
+@import 'masonry/transitions';
 
 html {
 	background-image: image-url('bg_textur.png');
@@ -32,10 +34,6 @@ a {
   &:hover {
     background-color: #1772B6;
   }
-}
-
-.container {
-
 }
 
 .preloader-wrapper{
@@ -80,7 +78,11 @@ footer.page-footer {
 	font-family: 'VT323';
 }
 
-
+#copy {
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-family: 'Caveat', cursive;
+}
 
 .drag-target {
   width: 5px;
@@ -103,35 +105,19 @@ footer.page-footer {
 	color: whitesmoke;
 }
 
-#error_explanation {
-  h2 {
-
-  }
-  li {
-
-  }
-}
-
-.welcome-wrapper {
-
-}
-
-.welcome-card {
-
-}
-
 #dramas {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  // display: -webkit-box;
+  // display: -webkit-flex;
+  // display: -ms-flexbox;
+  // display: flex;
+  // -webkit-box-pack: center;
+  // -webkit-justify-content: center;
+  //     -ms-flex-pack: center;
+  //         justify-content: center;
+  // -webkit-flex-wrap: wrap;
+  //     -ms-flex-wrap: wrap;
+  //         flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 .drama {

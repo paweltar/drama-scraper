@@ -3,12 +3,10 @@
 		<% if notice.present? %>
 			<p id="notice" class="chip animated rubberBand"><%= notice %><i class="material-icons">close</i></p>
 		<% end %>
-		<div id="dramas" class="transitions-enabled">
 			<!-- <div id="summary">
 					<%= render 'summary_card' %>
 			</div> -->
-		  <%= render 'drama_card' %>
-		</div>
+		<%= render 'drama_card' %>
 		<%= render 'floating_btns' %>
 	</div>
 </div>
