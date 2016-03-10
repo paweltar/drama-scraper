@@ -10,38 +10,64 @@
 </head>
 <body>
 
- <div class="navbar-fixed">
-  <nav>
-    <div class="nav-wrapper">
-      <a href="<%= root_path %>" class="brand-logo center">Drama Scraper</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <% if user_signed_in? %>
-          <li><a href="/"><%= current_user.email %></a></li>
-          <li><%= link_to 'Log Out', destroy_user_session_path, :method => :delete %></li>
-        <% else %>
-          <li><%= link_to 'Log In', new_user_session_path %></li>
-        <% end %>
-      </ul>
-      <ul class="side-nav z-depth-5" id="mobile-demo">
-        <% if user_signed_in? %>
-          <li>
-            <div class="chip light-green accent-3 user-chip-mobile">
-              <%= current_user.email %><i class="material-icons">perm_identity</i>
-            </div>
-          </li>
-          <li><%= link_to 'Log Out', destroy_user_session_path %></li>
-        <% else %>
-          <li><%= link_to 'Log In', new_user_session_path %></li>
-        <% end %>
-      </ul>
-    </div>
-  </nav>
-</div>
+<header>
+  <div class="navbar-fixed">
+   <nav>
+     <div class="nav-wrapper">
+       <a href="<%= root_path %>" class="brand-logo center">Drama Scraper</a>
+       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+       <ul class="right hide-on-med-and-down">
+         <% if user_signed_in? %>
+           <li><a href="/"><%= current_user.email %></a></li>
+           <li><%= link_to 'Log Out', destroy_user_session_path, :method => :delete %></li>
+         <% else %>
+           <li><%= link_to 'Log In', new_user_session_path %></li>
+         <% end %>
+       </ul>
+       <ul class="side-nav z-depth-5" id="mobile-demo">
+         <% if user_signed_in? %>
+           <li>
+             <div class="chip light-green accent-3 user-chip-mobile">
+               <%= current_user.email %><i class="material-icons">perm_identity</i>
+             </div>
+           </li>
+           <li><%= link_to 'Log Out', destroy_user_session_path %></li>
+         <% else %>
+           <li><%= link_to 'Log In', new_user_session_path %></li>
+         <% end %>
+       </ul>
+     </div>
+   </nav>
+ </div>
+</header>
 
-<div class="container">
-	<%= yield %>
-</div>
+<main>
+  <div class="container">
+  	<%= yield %>
+  </div>
+</main>
+
+<footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Drama Scraper</h5>
+          <p class="grey-text text-lighten-4">Get information about all new episodes with one click.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Paste links from:</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="http://myasiantv.se/">MyAsianTv</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2016 Paweł Targoński
+      </div>
+    </div>
+  </footer>
 
 <div class="preloader-wrapper big active">
   <div class="spinner-layer spinner-blue-only">
