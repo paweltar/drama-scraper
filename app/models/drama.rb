@@ -29,7 +29,7 @@ class Drama < ActiveRecord::Base
 				self.description = drama_description
 				self.subbed = subbed
 				self.broadcasted_at = Date.strptime(broadcast_date, "%A, %m/%d/%Y")
-				self.last_ep = last_ep_title
+				self.last_ep = last_ep_title.split('Episode')[-1].strip
 				self.last_refresh = Time.now
 			else
 				errors.add(:url, "This url wouldn't work..")

@@ -17,4 +17,5 @@
 //= require materialize/extras/nouislider
 //= require turbolinks
 //= require masonry/jquery.masonry
+//= require local_time
 //= require_tree .

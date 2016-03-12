@@ -11,8 +11,8 @@ class DramasController < ApplicationController
     if user_signed_in?
       @user = current_user
       @dramas = current_user.dramas.all
-      @titles = current_user.dramas.titles  
-    end    
+      @titles = current_user.dramas.titles
+    end
   end
 
   # GET /dramas/1
@@ -65,6 +65,7 @@ class DramasController < ApplicationController
   end
 
   def update_all
+    @dramas = current_user.dramas.all
     Drama.all.each do |drama|
       drama.fetch_drama_info
       drama.save

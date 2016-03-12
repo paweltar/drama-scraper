@@ -1,0 +1,21 @@
+<div class="chip light-green accent-3 z-depth-1 title-chip">
+  <%= drama.last_ep %>
+  <i class="material-icons">theaters</i>
+</div>
+<div class="chip light-green accent-2 z-depth-1 last_up_chip">
+  <%= local_time_ago(drama.last_refresh) %>
+  <i class="material-icons">loop</i>
+</div>
+<% if drama.subbed? %>
+<div class="chip light-green accent-1 z-depth-1">
+  Subbed!
+  <i class="material-icons">done</i>
+</div>
+<% else %>
+<div class="chip red darken-1 z-depth-1">
+  Raw..
+  <i class="material-icons">error_outline</i>
+</div>
+<% end %>
+<br>
+<br>

@@ -1,0 +1,4 @@
+<% @dramas.each do |drama| %>
+  $("#<%= drama.id %>-info-chips").fadeOut("slow");
+  $("#<%= drama.id %>-info-chips").replaceWith("<%= j render partial: "info_chips_partial", locals: { drama: drama } %>").fadeIn("slow");
+<% end %>
