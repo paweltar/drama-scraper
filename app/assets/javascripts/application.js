@@ -13,9 +13,9 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require masonry/jquery.masonry
 //= require materialize-sprockets
 //= require materialize/extras/nouislider
 //= require turbolinks
-//= require masonry/jquery.masonry
 //= require local_time
 //= require_tree .

@@ -3,17 +3,17 @@
   class="card drama z-depth-3 animated fadeIn"
   id="<%= drama.id %>"
   style="
-                background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= drama.img %>) no-repeat;
+                background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(<%= drama.img %>) no-repeat;
                 background-size: cover;
                 ">
   <div class="card-content">
-    <p class="card-title"><%= link_to drama.title, user_drama_path(user_id: current_user.id, id: drama.id) %></p>
+    <p class="card-title"><%= link_to truncate(drama.title, length: 30, separator: ' '), user_drama_path(user_id: current_user.id, id: drama.id) %></p>
 
     <div id="<%= drama.id %>-info-chips">
       <%= render partial: 'info_chips_partial',  locals: { drama: drama } %>
     </div>
 
-    <p class="flow-text"><%= truncate(drama.description, length: 150, separator: ' ') %>
+    <p class="drama-description"><%= truncate(drama.description, length: 150, separator: ' ') %>
       <p>
       </div>
       <div class="card-action index">
