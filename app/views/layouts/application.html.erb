@@ -13,20 +13,20 @@
   <body>
 
     <header>
-      <%= render 'navbar' %>
+      <%= render '/dramas/navbar' %>
     </header>
 
     <main>
       <div class="container">
-        <% if alert %>
-        <p class="alert chip red darken-1 error_chip z-depth-2 animated flipInX"><%= alert %></p>
-        <% end %>
-        <%= yield %>
+          <% if alert %>
+          <p class="alert chip red darken-1 error_chip z-depth-2 animated flipInX"><%= alert %></p>
+          <% end %>
+          <%= yield %>
       </div>
     </main>
 
     <footer class="page-footer">
-      <%= render 'footer' %>
+      <%= render '/dramas/footer' %>
     </footer>
 
     <div class="preloader-wrapper big active">
