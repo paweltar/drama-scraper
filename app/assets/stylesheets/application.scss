@@ -97,10 +97,6 @@ footer.page-footer {
   margin-left: 30px;
 }
 
-.navbar-fixed{
-	margin-bottom: 10px;
-}
-
 .error_chip {
 	color: whitesmoke;
 }
@@ -225,4 +221,10 @@ div.nav-wrapper {
 			width: 50%;
 		}
 	}
+}
+
+#notice, #alert {
+	width: 100%;
+	margin: 0 0 20px 0;
+	border-radius: 0;
 }

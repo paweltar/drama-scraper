@@ -17,10 +17,16 @@
     </header>
 
     <main>
+
+      <% if notice.present? %>
+  			<p id="notice" class="chip animated fadeIn"><%= notice %><i class="material-icons">close</i></p>
+  		<% end %>
+
+      <% if alert %>
+        <p id="alert" class="alert chip red darken-1 error_chip z-depth-2 animated flipInX"><%= alert %></p>
+      <% end %>
+
       <div class="container">
-          <% if alert %>
-          <p class="alert chip red darken-1 error_chip z-depth-2 animated flipInX"><%= alert %></p>
-          <% end %>
           <%= yield %>
       </div>
     </main>
