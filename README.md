@@ -4,7 +4,7 @@ This app uses Nokogiri to scrap information about current status of movies or tv
 
 
 ----------
-![screenshot index](https://www.dropbox.com/s/2y56fdo9hpn91si/final-mobile.jpg?dl=0)
+![screenshot index](/app/assets/images/final-main.jpg)
 
 ----------
-![screenshot mobile](https://www.dropbox.com/s/5mzi7si8ix0354q/final-main.jpg?dl=0)
+![screenshot mobile](/app/assets/images/final-mobile.jpg)
